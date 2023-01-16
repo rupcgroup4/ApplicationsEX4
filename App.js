@@ -1,14 +1,12 @@
 import * as eva from '@eva-design/eva';
-import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Layout, Text, Button } from '@ui-kitten/components';
+import { Layout } from '@ui-kitten/components';
 import { ApplicationProvider } from '@ui-kitten/components/theme';
-import Categories from './components/Categories';
-import Notes from './components/Notes';
+import Categories from './screens/Categories';
+import Notes from './screens/Notes';
 import NotesContextProvider from './context/NotesContextProvider';
-import AddNote from './components/AddNote';
-import { useNavigation } from '@react-navigation/native';
+import AddNote from './screens/AddNote';
 import AddNoteButton from './components/AddNoteButton';
 
 const { Navigator, Screen } = createNativeStackNavigator();

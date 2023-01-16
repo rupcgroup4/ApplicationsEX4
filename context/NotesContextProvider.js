@@ -11,22 +11,23 @@ const NotesContextProvider = (props) => {
       datetime: new Date().toLocaleDateString(),
     },
   ]);
-  const [categories, setCategories] = useState(['Personal']);
 
   const AddNote = (content, category) => {
     const newNote = {
-      id: uuid(),
+      id: notes.length,
       content,
       category,
       datetime: new Date().toLocaleDateString(),
     };
     setNotes([...notes, newNote]);
   };
+
   const RemoveNote = (id) => {
     setNotes(notes.filter((note) => note.id !== id));
   };
+
   return (
-    <NotesContext.Provider value={{ notes, AddNote, RemoveNote, categories }}>
+    <NotesContext.Provider value={{ notes, AddNote, RemoveNote }}>
       {props.children}
     </NotesContext.Provider>
   );

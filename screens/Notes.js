@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { NotesContext } from '../context/NotesContextProvider';
-import Note from './Note';
+import Note from '../components/Note';
 import { Layout } from '@ui-kitten/components';
 
 export default function Notes(props) {
@@ -13,9 +13,10 @@ export default function Notes(props) {
 
   return (
     <Layout style={styles.container}>
-      {notes.map((note) => (
-        <Note key={note.id} note={note} />
-      ))}
+      {notes.map(
+        (note) =>
+          note.category === category && <Note key={note.id} note={note} />
+      )}
     </Layout>
   );
 }

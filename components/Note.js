@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Card, Layout, Text, Button } from '@ui-kitten/components';
 import { NotesContext } from '../context/NotesContextProvider';
 
 const Note = ({ note }) => {
   const { RemoveNote } = useContext(NotesContext);
+
   const remove = () => {
     RemoveNote(note.id);
   };
+
   return (
     <Layout style={styles.container}>
       <Card style={styles.card} status='success'>
